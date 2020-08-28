@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DanceApp</title>
+    <title>DanceChannel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
+    <%= stylesheet_link_tag 'application', media: 'all'%> <%#allのあとに記述してあった　, 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header">
+      <div class="header_bar">
+        <h1 class="title"><a href="/">Dancers Joint</a></h1>
+      </div>
+      <%# <% if user_signed_in? %> 
+      <div class="navbar">
+        <ul class="nav-lists">
+          <li><%= link_to "nickname", "#", class: "user-nickname" %></li>
+          <li><%= link_to "ログアウト", "#", method: :delete, class: "logout" %></li> <%#destroy_user_session_path%>
+        <%# <% else %> 
+          <li><%= link_to "ログイン", "#", class: "login" %></li> <%#new_user_session_path%>
+          <li><%= link_to "新規登録", "#", class: "sign-up" %></li> <%#new_user_registration_path%>
+        </ul>
+      </div>
+      <%# <% end %> 
+    </header>
     <%= yield %>
+    <footer>
+      <p>
+        Copyright DancersJoint 2020.
+      </p>
+    </footer>
   </body>
 </html>
