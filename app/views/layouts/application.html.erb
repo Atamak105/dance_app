@@ -14,17 +14,17 @@
       <div class="header_bar">
         <h1 class="title"><a href="/">Dancers Joint</a></h1>
       </div>
-      <%# <% if user_signed_in? %> 
       <div class="navbar">
+      <% if user_signed_in? %> 
         <ul class="nav-lists">
-          <li><%= link_to "nickname", "#", class: "user-nickname" %></li>
-          <li><%= link_to "ログアウト", "#", method: :delete, class: "logout" %></li> <%#destroy_user_session_path%>
-        <%# <% else %> 
-          <li><%= link_to "ログイン", "#", class: "login" %></li> <%#new_user_session_path%>
-          <li><%= link_to "新規登録", "#", class: "sign-up" %></li> <%#new_user_registration_path%>
+          <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <% else %> 
+          <li><%= link_to "ログイン", new_user_session_path, class: "login" %></li>
+          <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up" %></li> 
         </ul>
-      </div>
-      <%# <% end %> 
+      <% end %>
+      </div> 
     </header>
     <%= yield %>
     <footer>

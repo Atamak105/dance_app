@@ -35,19 +35,20 @@ header {
 .navbar {
   width: 50%;
   padding: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .nav-lists {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: space-around;
   text-decoration: none;
 }
 
 li {
   list-style: none;
   text-decoration: none;
+  font-size: 15px;
 }
 
 a {
