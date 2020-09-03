@@ -1,10 +1,17 @@
 class TopicsController < ApplicationController
+  
+  def new
+    @topic = Topic.new
+  end
+  
   def index
-    @topics = Topic.all
-    @newTopic = Topic.new
+    @topics = Topic.all.order(id: "DESC")
   end
 
   def show
+    @topic = Topic.find(params[:id])
+    @post = Post.new
+    @posts = @topic.posts.includes(:user)
   end
 
   def create

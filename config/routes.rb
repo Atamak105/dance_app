@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'topics/index'
-  get 'topics/show'
   devise_for :users
   root 'contents#index'
   get 'contents/index'
+  get 'topics/index'
 
-  resources :topics, only: [:index, :show, :create]
-  
+  resources :topics, only: [:index, :new, :show, :create] do
+    resources :posts, only: :create
+  end
 
 end
