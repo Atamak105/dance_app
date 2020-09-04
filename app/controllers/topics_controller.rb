@@ -25,5 +25,5 @@ end
 private
 
 def topic_params
-  params.permit(:title).merge(user_id: current_user.id)
+  params.permit(:title, :category_id).merge(user_id: current_user.id)
 end

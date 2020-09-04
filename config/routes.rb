@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'topics/index'
 
   resources :topics, only: [:index, :new, :show, :create] do
-    resources :posts, only: :create
+    resources :posts, only: [:create, :edit, :update]
   end
 
 end

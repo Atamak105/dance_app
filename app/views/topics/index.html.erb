@@ -11,6 +11,7 @@
   <h4>Create Topic</h4>
   <%= form_with model: @user, url: topics_path,class: 'topic-new', local: true do |f| %>
     <%= f.text_field :title %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
     <%= f.submit "Create"%>
   <% end %>
 </div>

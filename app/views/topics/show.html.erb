@@ -18,6 +18,9 @@
             <div class="post-date">
               date：<%= post.created_at %>
             </div>
+            <div class="post-edit">
+            <%= link_to "edit", edit_topic_post_path(post.id), method: :get %>
+            </div>
           </div>
         </div>
       <% end %>

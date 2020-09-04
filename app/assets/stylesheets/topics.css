@@ -17,6 +17,12 @@ input[type="text"] {
   height: 40px;
 }
 
+.category-select {
+  width: 130px;
+  height: 40px;
+  font-size: 17px;
+}
+
 
 
 /* トピック詳細画面 */
