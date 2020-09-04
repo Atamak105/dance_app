@@ -1,12 +1,16 @@
-<h1>Topics</h1>
-<ul>
-  <% @topics.each do |topic| %>
-    <li><%= link_to topic.title, topic_path(topic.id), method: :get %></li>
-  <% end %>
-</ul>
+<div class="topics">
+    <h4>Topics</h4>
+      <div class="topic-titles">
+      <ul>
+        <% @topics.each do |topic| %>
+          <li><%= link_to topic.title, topic_path(topic.id), method: :get %></li>
+        <% end %>
+      </ul>
+      </div>
 
-<h1>Create Topic</h1>
-<%= form_with model: @user, url: topics_path,class: 'topic-new', local: true do |f| %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
-<% end %>
+  <h4>Create Topic</h4>
+  <%= form_with model: @user, url: topics_path,class: 'topic-new', local: true do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit "Create"%>
+  <% end %>
+</div>

@@ -1,32 +1,35 @@
-<h1><%= @topic.title %></h1>
-<%# <% @posts.each_with_index do |post , idx| %>
-  <%# <p>
-    <%# <%= idx + 1 %><%#= post.name %> <%#= post.body %>
-  <%# </p> %>
-<%# <% end %>
+<div class="topic-view">
 
-<div class="posts">
-  <% if @posts %>
-    <% @posts.each do |post| %>
-      <div class="post-content">
-        <div class="post-date">
-          投稿日時：<%= post.created_at %>
+  <div class="topic-title">
+    <p><%= @topic.title %></p>
+  </div>
+
+  <div class="posts">
+    <% if @posts %>
+      <% @posts.each do |post| %>
+        <div class="post-content">
+          <div class="post-body">
+            <%= post.body %>
+          </div>
+          <div class="post-info">
+            <div class="post-user">
+              from：<%= link_to post.user.nickname, "/users/#{post.user_id}" %>
+            </div>
+            <div class="post-date">
+              date：<%= post.created_at %>
+            </div>
+          </div>
         </div>
-        <div class="post-user">
-          from：<%= link_to post.user.nickname, "/users/#{post.user_id}" %>
-        </div>
-        <div class="post-body">
-          <%= post.body %>
-        </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<div class="new-post">
-  <h2>New post</h2>
-<%= form_with(model: [@topic, @post], local: true) do |f| %>
-  <p>本文</p>
-  <p><%= f.text_area :body %></p>
-  <%= f.submit "SEND" %>
-<% end %>
+  <div class="new-post">
+    <h2>New post</h2>
+      <%= form_with(model: [@topic, @post], local: true) do |f| %>
+        <p><%= f.text_area :body %></p>
+        <%= f.submit "Post" %>
+      <% end %>
+  </div>
+
+</div>
