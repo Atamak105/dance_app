@@ -5,14 +5,20 @@ class PostsController < ApplicationController
     redirect_to "/topics/#{@post.topic.id}"
   end
 
-  # def edit
-  #   @post = Post.find(params[:id])
-  # end
+  def edit
+    @post = Post.find(params[:id])
+  end
 
-  # def update
-  #   post = Post.find(params[:id])
-  #   post.update(post_params)
-  # end
+  def update
+    post = Post.find(params[:id])
+    # post.update(post_params)
+    # redirect_to topic_path
+    if post.update(post_params)
+      redirect_to topic_path
+    else
+      render 'edit'
+    end
+  end
 
   private
   

@@ -1,0 +1,8 @@
+<div class="post-edit-page">
+  <div class="post-edit-form">
+    <%= form_with(model: @post, url: topic_post_path, local: true) do |f| %>
+      <%= f.text_area :body %>
+      <%= f.submit "Post" %>
+    <% end %>
+  </div>
+</div>

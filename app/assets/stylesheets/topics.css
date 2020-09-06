@@ -55,6 +55,7 @@ input[type="text"] {
 
 form textarea {
   width: 60%;
+  height: 250px;
   margin: 5px 0 15px;
   padding: 10px;
   border: 1px solid #D8D8D8;
@@ -99,4 +100,15 @@ form input[type="submit"]:hover {
 
 .post-date {
   margin: 5px;
+}
+
+.post-edit {
+  margin: 5px;
+  padding: 0 10px;
+  border: 1px solid black;
+}
+
+/* 編集ページ */
+.post-edit-page {
+  margin: 50px;
 }

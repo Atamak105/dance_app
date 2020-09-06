@@ -9,7 +9,7 @@
       <% @posts.each do |post| %>
         <div class="post-content">
           <div class="post-body">
-            <%= post.body %>
+            <%=safe_join(post.body.split("\n"),tag(:br))%>
           </div>
           <div class="post-info">
             <div class="post-user">
@@ -19,7 +19,9 @@
               date：<%= post.created_at %>
             </div>
             <div class="post-edit">
-            <%= link_to "edit", edit_topic_post_path(post.id), method: :get %>
+              <% if current_user.id == @post.user_id %>
+                <%= link_to "edit", edit_topic_post_path(post.id), method: :get %>
+              <% end %>
             </div>
           </div>
         </div>
