@@ -8,8 +8,17 @@ h4 {
   margin-top: 50px;
 }
 
+.topic-titles {
+}
+
 .topic-titles li {
   font-size: 20px;
+  display: flex;
+  color: lightslategray;
+}
+
+.topic-titles li :hover {
+  color: brown;
 }
 
 input[type="text"] {

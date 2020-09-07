@@ -5,7 +5,16 @@ class TopicsController < ApplicationController
   end
   
   def index
-    @topics = Topic.all.order(id: "DESC")
+    # @topics = Topic.all.order(id: "DESC")
+    if params[:category_id]
+      # Categoryのデータベースのテーブルから一致するidを取得
+      @category = Category.find(params[:category_id])
+      # category_idと紐づく投稿を取得
+      @topics = @category.topics.order(created_at: :desc).all
+    else
+      # 投稿すべてを取得
+      @topics = Topic.order(created_at: :desc).all
+    end
   end
 
   def show

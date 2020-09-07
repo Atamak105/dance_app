@@ -3,7 +3,7 @@
       <div class="topic-titles">
       <ul>
         <% @topics.each do |topic| %>
-          <li><%= link_to topic.title, topic_path(topic.id), method: :get %></li>
+          <li><%= link_to topic.title, topic_path(topic.id), method: :get %> （ <%= topic.category.name %> ）</li>
         <% end %>
       </ul>
       </div>

@@ -1,24 +1,4 @@
 <body>
-  <%# <nav id="mainNav">
-    <div class="inner">
-      <a class="menu" id="menu"><span>MENU</span></a>
-        <div class="panel" style="display: none;">
-          <ul id="topnav">
-            <li class="current-menu-item"><a href="index.html"><strong>トップページ</strong><br><span>Top</span></a></li>
-            <li><a href="sample.html"><strong>ごあいさつ</strong><br><span>Greeting</span></a>
-              <ul class="sub-menu">
-                <li><a href="sample.html">代表メッセージ</a></li>
-                <li><a href="sample.html">社員の声</a></li>
-              </ul>
-            </li>
-            <li><a href="sample.html"><strong>サービス概要</strong><br><span>Service</span></a></li>
-            <li><a href="sample.html"><strong>弊社の取り組み</strong><br><span>Approach</span></a></li>
-            <li><a href="sample.html"><strong>会社概要</strong><br><span>Company</span></a></li>
-            <li><a href="sample.html"><strong>お問い合わせ</strong><br><span>Contact</span></a></li>
-          </ul>
-      </div>
-    </div>
-  </nav> %>
 
   <%# 画面上部の帯部分 %>
   <div class='title-contents'>
@@ -50,50 +30,59 @@
           <div class="box">
             <h3>music</h3>
             <p class="img"><%= image_tag "music.jpg" %></p>
-            <p>musicの説明</p>
-            <p class="readmore"><a href="#">readmore</a></p>
+            <p>おすすめの楽曲情報はこちら！</p>
+            <p class="readmore"><a href="http://localhost:3000/topics?category_id=2">readmore</a></p>
           </div>
         </article>  
         <article class="grid">
           <div class="box">
             <h3>movie</h3>
             <p class="img"><%= image_tag "movie.jpg" %></p>
-            <p>movieの説明</p>
-            <p class="readmore"><a href="#">readmore</a></p>
+            <p>ショーケースを閲覧できます！</p>
+            <p class="readmore"><a href="http://localhost:3000/topics?category_id=3">readmore</a></p>
           </div>
         </article>  
         <article class="grid">
           <div class="box">
             <h3>community</h3>
             <p class="img"><%= image_tag "community.jpg" %></p>
-            <p>communityの説明</p>
-            <p class="readmore"><a href="#">readmore</a></p>
+            <p>チームメイト募集等なんでもOK！</p>
+            <p class="readmore"><a href="http://localhost:3000/topics?category_id=7">readmore</a></p>
           </div>
         </article>
         <article class="grid">
           <div class="box">
             <h3>business</h3>
             <p class="img"><%= image_tag "business.jpg" %></p>
-            <p>businessの説明</p>
-            <p class="readmore"><a href="#">readmore</a></p>
+            <p>仕事に関する情報はこちら！</p>
+            <p class="readmore"><a href="http://localhost:3000/topics?category_id=6">readmore</a></p>
           </div>
         </article>
         <article class="grid">
           <div class="box">
             <h3>skills</h3>
             <p class="img"><%= image_tag "skills.jpg" %></p>
-            <p>skillsの説明</p>
-            <p class="readmore"><a href="#">readmore</a></p>
+            <p>オンラインでスキルアップ！</p>
+            <p class="readmore"><a href="http://localhost:3000/topics?category_id=5">readmore</a></p>
           </div>
         </article>
         <article class="grid">
           <div class="box">
             <h3>events</h3>
             <p class="img"><%= image_tag "event.jpg" %></p>
-            <p>eventの説明</p>
-            <p class="readmore"><a href="#">readmore</a></p>
+            <p>Event情報はこちら！</p>
+            <p class="readmore"><a href="http://localhost:3000/topics?category_id=4">readmore</a></p>
           </div>
         </article>
+        <article class="grid">
+          <div class="box">
+            <h3>other</h3>
+            <p class="img"><%= image_tag "other.jpg" %></p>
+            <p>その他の情報はこちら！</p>
+            <p class="readmore"><a href="http://localhost:3000/topics?category_id=8">readmore</a></p>
+          </div>
+        </article>
+
       </section>
     </div>
 
