@@ -11,8 +11,6 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    # post.update(post_params)
-    # redirect_to topic_path
     if post.update(post_params)
       redirect_to topic_path
     else
@@ -27,3 +25,11 @@ class PostsController < ApplicationController
   end
 
 end
+
+# create
+    # @post = Post.new(post_params)
+    # @post.save
+
+# update
+    # post.update(post_params)
+    # redirect_to topic_path
