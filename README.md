@@ -24,7 +24,7 @@ Dancers Joint
 - より見やすい掲示板へのアップデート
 
 # キャプチャ画像
-[![Image from Gyazo](https://i.gyazo.com/716aaddb09a04a36840cb63b360c2e32.gif)](https://gyazo.com/716aaddb09a04a36840cb63b360c2e32)
+[![Image from Gyazo](https://i.gyazo.com/45f8086e548a6352f8671fef4827c88d.gif)](https://gyazo.com/45f8086e548a6352f8671fef4827c88d)
 
 # テーブル設計
 
