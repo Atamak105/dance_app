@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_action :move_to_login
   
   def new
     @topic = Topic.new
@@ -29,21 +30,16 @@ class TopicsController < ApplicationController
     @topic.save
     redirect_to topics_index_path
   end
-end
-
-  # def edit
-  #   @post = Post.find(params[:id])
-  # end
-
-  # def update
-  #   post = Post.find(params[:id])
-  #   post.update(post_params)
-  # end
-
-
 
 private
 
-def topic_params
-  params.permit(:title, :category_id).merge(user_id: current_user.id)
+  def topic_params
+    params.permit(:title, :category_id).merge(user_id: current_user.id)
+  end
+
+  # ログインしていない場合ログイン画面に遷移する
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
 end

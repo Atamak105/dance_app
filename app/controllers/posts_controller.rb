@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  
+  before_action :move_to_login
+
   def create
     @post = Post.create(post_params)
     redirect_to "/topics/#{@post.topic.id}"
@@ -24,12 +25,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:body).merge(user_id: current_user.id, topic_id: params[:topic_id])
   end
 
+  def move_to_login
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
 end
-
-# create
-    # @post = Post.new(post_params)
-    # @post.save
-
-# update
-    # post.update(post_params)
-    # redirect_to topic_path
