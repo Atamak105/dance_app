@@ -1,17 +1,36 @@
 <div class="topics">
-    <h4>Topics</h4>
-      <div class="topic-titles">
-      <ul>
-        <% @topics.each do |topic| %>
-          <li><%= link_to topic.title, topic_path(topic.id), method: :get %> （ <%= topic.category.name %> ）</li>
-        <% end %>
-      </ul>
+
+  <div class="search">
+    <%= search_form_for @search do |f| %>
+      <div class="search-form">
+        <%# <%= f.label :title_cont, "Name" %>
+        <%= f.text_field :title_cont, placeholder: "コンテンツを検索する" %>
+        <%= f.submit "Search" %>
       </div>
+    <% end %>
+
+    <% if @results.any? %>
+      <% @results.each do |result| %>
+        <%= link_to result.title, topic_path(result.id) %>
+      <% end %>
+    <% else %>
+      <p>キーワードを含む投稿を検索できませんでした</p>
+    <% end %>
+  </div>
+
+  <h4>Topics</h4>
+    <div class="topic-titles">
+    <ul>
+      <% @topics.each do |topic| %>
+        <li><%= link_to topic.title, topic_path(topic.id), method: :get %> （ <%= topic.category.name %> ）</li>
+      <% end %>
+    </ul>
+    </div>
 
   <h4>Create Topic</h4>
-  <%= form_with model: @user, url: topics_path, class: 'topic-new', local: true do |f| %>
-    <%= f.text_field :title %>
-    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
-    <%= f.submit "Create"%>
-  <% end %>
+    <%= form_with model: @user, url: topics_path, class: 'topic-new', local: true do |f| %>
+      <%= f.text_field :title %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+      <%= f.submit "Create"%>
+    <% end %>
 </div>
