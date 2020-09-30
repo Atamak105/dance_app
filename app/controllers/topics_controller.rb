@@ -6,7 +6,6 @@ class TopicsController < ApplicationController
   end
   
   def index
-    # @topics = Topic.all.order(id: "DESC")
     if params[:category_id]
       # Categoryのデータベースのテーブルから一致するidを取得
       @category = Category.find(params[:category_id])
@@ -16,19 +15,22 @@ class TopicsController < ApplicationController
       # 投稿すべてを取得
       @topics = Topic.order(created_at: :desc).all
     end
+
+    # 検索フォーム
+    @search = Topic.ransack(params[:q])
+    @results = @search.result(distinct: true)
   end
 
   def show
     @topic = Topic.find(params[:id])
     @post = Post.new
     @posts = @topic.posts.includes(:user)
-    # @posts = Post.find(params[:id])
   end
 
   def create
     @topic = Topic.new(topic_params)
     @topic.save
-    redirect_to topics_index_path
+    redirect_to topic_path(@topic)
   end
 
 private
