@@ -16,9 +16,9 @@ class TopicsController < ApplicationController
       @topics = Topic.order(created_at: :desc).all
     end
 
-    @search = Topic.ransack(params[:q])   # 検索機能 Topicテーブルの内容を@searchに代入
-    @results = @search.result(distinct: true)  # 結果を@resultへ代入
-
+    # 検索フォーム
+    @search = Topic.ransack(params[:q])
+    @results = @search.result(distinct: true)
   end
 
   def show
@@ -30,7 +30,7 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params)
     @topic.save
-    redirect_to topics_index_path
+    redirect_to topic_path(@topic)
   end
 
 private

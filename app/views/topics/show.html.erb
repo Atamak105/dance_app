@@ -32,7 +32,7 @@
   <div class="new-post">
     <h2>New post</h2>
       <%= form_with(model: [@topic, @post], local: true) do |f| %>
-        <p><%= f.text_area :body %></p>
+        <p><%= f.text_area :body, placeholder: "内容を入力してください。※絵文字使用不可" %></p>
         <%= f.submit "Post" %>
       <% end %>
   </div>
