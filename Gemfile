@@ -64,3 +64,7 @@ gem 'active_hash'
 gem 'ransack'
 
 gem 'rinku'
+
+group :production do
+  gem 'rails_12factor'
+end
