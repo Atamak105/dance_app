@@ -6,7 +6,7 @@ body {
 .title-contents {
   width: 100％;
   height: 80vh;
-  background-image: image-url('people-2589091_1280.jpg');
+  background-image: url(/images/people-2589091_1280.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
